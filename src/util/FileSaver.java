@@ -3,9 +3,10 @@ package util;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-
+import java.io.InputStreamReader;
+import java.io.Writer;
 public class FileSaver {
 	
 	/**
@@ -13,19 +14,27 @@ public class FileSaver {
 	 * 
 	 * @param filename which file we want to save it to
 	 * @param contents contents of the file
+	 * @param Write 
 	 * @return whether or not we successfully saved the file
 	 */
 	public static boolean saveFileOverwrite(String filename, String contents) {
-		try {
-			PrintWriter writer = new PrintWriter("String filename", "String contents");
-			writer.print("String filename");
-			writer.print("String contents");
-			writer.close();
-		} catch (IOException e) {
-			//do something
-		}
+	   
+	try {
+	    File f = new File(filename);
+		
+		FileWriter writer = new FileWriter(f);
+		
+		writer.write(contents);
+		
+		writer.close();
+		return true;
+		
+	 } catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 		
 		return false;
+		}
 	}
 	
 	/**
