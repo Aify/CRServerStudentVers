@@ -25,15 +25,16 @@ public class Main {
 		
 		System.out.println(first + " " + second); // you should be see 111111111 222222222 as the output
 		
-		
-		// Filesaver testing for Eric:
-		FileSaver.saveFileAppend("eric.txt", "Hello world\n");
-		FileSaver.saveFileAppend("eric.txt", "Good Bye World");
-		
-		String eric = FileSaver.readFile("eric.txt");
-		System.out.println(eric); // you should see Hello world
-								  //                Good Bye World 
-								  // as the output
+	
+//		// Filesaver testing for Eric:
+//		FileSaver.saveFileAppend("eric.txt", "Hello world\n");
+//		FileSaver.saveFileAppend("eric.txt", "Good Bye World");
+//		
+//		String eric = FileSaver.readFile("eric.txt");
+//		System.out.println(eric); // you should see Hello world
+//								  //                Good Bye World 
+//								  // as the output
+//	}
+//
 	}
-
 }
