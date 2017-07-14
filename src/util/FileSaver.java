@@ -2,16 +2,12 @@ package util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 public class FileSaver {
 	
-	private static boolean data;
-
-
 	/**
 	 * This function saves a string to a file, overwriting all its internal contents
 	 * 
@@ -21,18 +17,12 @@ public class FileSaver {
 	 */
 	public static boolean saveFileOverwrite(String filename, String contents) {
 		try {
-			PrintWriter writer = new PrintWriter("OverWrite.txt", "UTF-8");
-			writer.print("111111111");
-			writer.print("222222222");
+			PrintWriter writer = new PrintWriter("String filename", "String contents");
+			writer.print("String filename");
+			writer.print("String contents");
 			writer.close();
 		} catch (IOException e) {
-			data = saveFileOverwrite(filename, contents);
-			try {
-				FileOutputStream out = new FileOutputStream("saveFileOverwrite");
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			//do something
 		}
 		
 		return false;
