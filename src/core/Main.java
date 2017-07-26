@@ -23,17 +23,18 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ServerSocket s;
 		try {
-			s = new ServerSocket(9876);
-		  //creates a new server
+			ServerSocket Server = new ServerSocket(9876);       //creates a new server
 	    
-		Socket ss= s.accept();          //Accepts connection request of the other person
+		Socket client= Server.accept();    //Accepts connection request of the other person
+		Socket clientTwo= Server.accept();
 		
 		System.out.println("CONNECTED");    //it will say CONNECTED if the server works with the other person
 		
-		InputStream in = ss.getInputStream();        //Save the input stream 
-		OutputStream out = ss.getOutputStream();     //Save the output stream
+		InputStream in = client.getInputStream();        //Save the input stream 
+		OutputStream out = client.getOutputStream();     //Save the output stream
+		InputStream in1 = clientTwo.getInputStream();
+		OutputStream out1 = clientTwo.getOutputStream();
 		
 		Thread t;             //Create a new runnable thread
 		t = new Thread(new Runnable() {     
@@ -41,7 +42,7 @@ public class Main {
 			@Override
 			public void run() {                   //Telling what the thread will do
 				// TODO Auto-generated method stub
-				Scanner inscan = new Scanner(in);      //Scanner will help u connect to the input stream
+				Scanner inscan = new Scanner(in1);      //Scanner will help u connect to the input stream
 				while(true) {
 					String x = inscan.nextLine();
 					System.out.println(x);
